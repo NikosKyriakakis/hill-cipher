@@ -8,7 +8,7 @@ class HillCipher:
         self._inv_alphabet = {}
         self.alphabet = alphabet
         self.keysize = keysize
-        self.valid_key_length = (4, 9, 16, 25)
+        self._valid_key_length = (4, 9, 16, 25)
         self.key = key
     
     @property
@@ -72,7 +72,7 @@ class HillCipher:
                 print("[-] 2D list or string input required for key.")
                 sys.exit(1)
         else:
-            if len(value) not in self.valid_key_length:
+            if len(value) not in self._valid_key_length:
                 print("[-] Key length should be square of integer in the following range 4, 9, 16, 25")
                 sys.exit(1)
                 
